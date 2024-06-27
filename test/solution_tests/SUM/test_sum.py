@@ -11,6 +11,3 @@ def test_sum_ints_is_int(x, y):
 @given(st.integers(min_value=0, max_value=100), st.integers(min_value=0, max_value=100))
 def test_sum_is_commutative(x, y):
     assert sum_solution.compute(x, y) == sum_solution.compute(y, x)
-
-
-
