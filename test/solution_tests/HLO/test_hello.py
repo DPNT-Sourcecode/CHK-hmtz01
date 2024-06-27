@@ -9,5 +9,6 @@ def test_hello_contains_name(n):
 def test_hello_contains_hello(n):
     assert "Hello" in hello_solution.hello(n)
 
-def test_hello_example(n):
+def test_hello_example():
     assert hello_solution.hello("John") == "Hello, John!"
+
