@@ -11,4 +11,3 @@ def test_hello_contains_hello(n):
 
 def test_hello_example():
     assert hello_solution.hello("John") == "Hello, John!"
-
