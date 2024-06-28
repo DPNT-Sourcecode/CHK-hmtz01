@@ -4,7 +4,7 @@ from dataclasses import dataclass
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    basket = counter(skus)
+    basket = basket_from_skus(skus)
     subtotal = 0
 
     while basket is not None:
@@ -13,7 +13,10 @@ def checkout(skus):
     return subtotal
 
 
-def counter(skus):
+def basket_from_skus(skus):
+    """
+    Count a total for each item in the basket
+    """
     return Counter(skus)
 
 
@@ -43,6 +46,7 @@ def price_step(subtotal, basket):
         return subtotal, None
     else:
         return -1, None
+
 
 
 
