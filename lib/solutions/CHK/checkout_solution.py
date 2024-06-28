@@ -10,5 +10,3 @@ def checkout(skus):
 
 def counter(skus):
     return Counter(skus)
-
-

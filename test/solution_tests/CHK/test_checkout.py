@@ -13,4 +13,3 @@ import pytest
 )
 def test_checkout_counter(input_skus, counter_output):
     assert checkout_solution.counter(input_skus) == counter_output
-
