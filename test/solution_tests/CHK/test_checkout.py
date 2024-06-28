@@ -9,7 +9,7 @@ import pytest
         ("B", 30),
         ("AABAC", 180),
         ("AABBBAACD", 130 + 50 + 45 + 30 + 20 + 15),
-        ("ABCDE", -1)
+        ("ABCDz", -1)
     ]
 )
 def test_checkout_examples(input_skus, expected_total):
@@ -46,3 +46,4 @@ def test_price_step(input_basket, price):
      assert new_price == 1000 + price
      # Check that basket is empty
      assert sum(new_basket.values()) == 0
+
