@@ -139,7 +139,3 @@ def price_step(subtotal, basket):
         return subtotal, None
     else:
         return -1, None
-
-
-
-
