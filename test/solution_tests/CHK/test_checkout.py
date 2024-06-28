@@ -25,5 +25,9 @@ def test_checkout_counter(input_skus, counter_output):
         ({"D": 1}, 15),
     ]
 )
-def test_price_step(input_basket, price)
+def test_price_step(input_basket, price):
+     new_price, new_basket = checkout_solution.price_step(1000, input_basket)
+     assert new_price == 1000 + price
+     assert sum(new_basket.values()) == 0
+
 
