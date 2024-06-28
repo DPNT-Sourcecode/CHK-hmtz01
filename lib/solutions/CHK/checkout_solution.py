@@ -102,7 +102,7 @@ def price_step(subtotal, basket):
     if j >= 1:
         return (subtotal + 60, {**basket, "J": j - 1})
     if k >= 1:
-        return (subtotal + 80, {**basket, "K": k - 1})
+        return (subtotal + 70, {**basket, "K": k - 1})
     if l >= 1:
         return (subtotal + 90, {**basket, "L": l - 1})
     if m >= 1:
@@ -118,7 +118,7 @@ def price_step(subtotal, basket):
     if r >= 1:
         return (subtotal + 50, {**basket, "R": r - 1})
     if s >= 1:
-        return (subtotal + 30, {**basket, "S": s - 1})
+        return (subtotal + 20, {**basket, "S": s - 1})
     if t >= 1:
         return (subtotal + 20, {**basket, "T": t - 1})
     if u >= 1:
@@ -128,14 +128,15 @@ def price_step(subtotal, basket):
     if w >= 1:
         return (subtotal + 20, {**basket, "W": w - 1})
     if x >= 1:
-        return (subtotal + 90, {**basket, "X": x - 1})
+        return (subtotal + 17, {**basket, "X": x - 1})
     if y >= 1:
-        return (subtotal + 10, {**basket, "Y": y - 1})
+        return (subtotal + 20, {**basket, "Y": y - 1})
     if z >= 1:
-        return (subtotal + 50, {**basket, "Z": z - 1})
+        return (subtotal + 21, {**basket, "Z": z - 1})
 
 
     if all(v == 0 for v in basket.values()):
         return subtotal, None
     else:
         return -1, None
+
