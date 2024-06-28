@@ -5,8 +5,32 @@ from dataclasses import dataclass
 # skus = unicode string
 def checkout(skus):
     basket = counter(skus)
-
+    raise NotImplementedError()
 
 
 def counter(skus):
     return Counter(skus)
+
+
+def price_step(subtotal, basket):
+    """
+    Apply a single pricing step, returning the new subtotal, and unpriced basket.
+    """
+    a = basket.get("A", 0)
+    b = basket.get("B", 0)
+    c = basket.get("C", 0)
+    d = basket.get("D", 0)
+
+    if a > 3:
+        return (subtotal + 130, {**basket, "A": a - 3})
+    if b > 2:
+        return (subtotal + 45, {**basket, "B": b - 2})
+    if a > 0:
+        return (subtotal + 50, {**basket, "A": a - 1})
+    if b > 0:
+        return (subtotal + 30, {**basket, "B": b - 1})
+    if c > 0:
+        return (subtotal + 20, {**basket, "C": c - 1})
+    if d > 0:
+        return (subtotal + 15, {**basket, "D": d - 1})
+
