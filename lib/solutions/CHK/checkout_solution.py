@@ -32,6 +32,8 @@ def price_step(subtotal, basket):
 
     if e >= 2 and b >= 1:
         return (subtotal + 80, {**basket, "E": e - 2, "B": b - 1})
+    if f >= 3:
+        return (subtotal + 30, {**basket, "F": f - 3})
     if a >= 5:
         return (subtotal + 200, {**basket, "A": a - 5})
     if a >= 3:
@@ -54,5 +56,6 @@ def price_step(subtotal, basket):
         return subtotal, None
     else:
         return -1, None
+
 
 
