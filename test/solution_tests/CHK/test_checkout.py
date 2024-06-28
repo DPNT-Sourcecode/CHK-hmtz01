@@ -3,6 +3,21 @@ from hypothesis import given, strategies as st
 import pytest
 
 @pytest.mark.parametrize(
+    "input_skus, expected_total",
+    [
+        ("A", 50),
+        ("B", 30),
+        ("AABAC", 180),
+        ("AABBBAACD", 130 + 50 + 45 + 30 + 20 + 15),
+        ("ABCDE", -1)
+    ]
+)
+def test_checkout_examples(input_skus, expected_total):
+    assert checkout_solution.checkout(input_skus) == expected_total
+
+
+
+@pytest.mark.parametrize(
     "input_skus, counter_output",
     [
         ("A", {"A": 1}),
@@ -31,6 +46,7 @@ def test_price_step(input_basket, price):
      assert new_price == 1000 + price
      # Check that basket is empty
      assert sum(new_basket.values()) == 0
+
 
 
 
