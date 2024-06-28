@@ -21,9 +21,9 @@ def price_step(subtotal, basket):
     c = basket.get("C", 0)
     d = basket.get("D", 0)
 
-    if a > 3:
+    if a >= 3:
         return (subtotal + 130, {**basket, "A": a - 3})
-    if b > 2:
+    if b >= 2:
         return (subtotal + 45, {**basket, "B": b - 2})
     if a > 0:
         return (subtotal + 50, {**basket, "A": a - 1})
@@ -33,4 +33,5 @@ def price_step(subtotal, basket):
         return (subtotal + 20, {**basket, "C": c - 1})
     if d > 0:
         return (subtotal + 15, {**basket, "D": d - 1})
+
 

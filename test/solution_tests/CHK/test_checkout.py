@@ -13,3 +13,17 @@ import pytest
 )
 def test_checkout_counter(input_skus, counter_output):
     assert checkout_solution.counter(input_skus) == counter_output
+
+
+@pytest.mark.parametrize(
+    "input_basket, price",
+    [
+        ({"A": 3}, 130),
+        ({"A": 1}, 50),
+        ({"B": 2}, 45),
+        ({"C": 1}, 20),
+        ({"D": 1}, 15),
+    ]
+)
+def test_price_step(input_basket, price)
+
