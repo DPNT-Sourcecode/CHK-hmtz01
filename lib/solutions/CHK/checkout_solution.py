@@ -49,6 +49,18 @@ def price_step(subtotal, basket):
         return (subtotal + 150, {**basket, "K": k - 2})
     if n >= 3 and m >= 1:
         return (subtotal + 120, {**basket, "N": n - 3, "M": m - 1})
+    if p >= 5:
+        return (subtotal + 200, {**basket, "P": p - 5})
+    if r >= 3 and q >= 1:
+        return (subtotal + 150, {**basket, "R": r - 3, "Q": q - 1}
+    if q >= 3:
+        return (subtotal + 80, {**basket, "Q": q - 3})
+    if u >= 4:
+        return (subtotal + 120, {**basket, "U": u - 4})
+    if v >= 3:
+        return (subtotal + 130, {**basket, "V": v - 3})
+    if v >= 2:
+        return (subtotal + 90, {**basket, "V": v - 2})
     if x >= 1:
         return (subtotal + 10, {**basket, "F": f - 1})
     if a >= 1:
@@ -109,4 +121,5 @@ def price_step(subtotal, basket):
         return subtotal, None
     else:
         return -1, None
+
 
