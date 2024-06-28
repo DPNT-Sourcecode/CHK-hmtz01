@@ -5,7 +5,12 @@ from dataclasses import dataclass
 # skus = unicode string
 def checkout(skus):
     basket = counter(skus)
-    raise NotImplementedError()
+    subtotal = 0
+
+    while basket is not None:
+        subtotal, basket = price_step(subtotal, basket)
+
+    return subtotal
 
 
 def counter(skus):
@@ -38,6 +43,7 @@ def price_step(subtotal, basket):
         return subtotal, None
     else:
         return -1, None
+
 
 
 
