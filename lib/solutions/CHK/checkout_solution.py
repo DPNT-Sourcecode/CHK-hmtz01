@@ -30,21 +30,23 @@ def price_step(subtotal, basket):
     d = basket.get("D", 0)
     e = basket.get("E", 0)
 
-    if e >= 2:
-        return (subtotal + 40, {**basket, "E"})
+    if e >= 2 and b >= 1:
+        return (subtotal + 80, {**basket, "E": e - 2, "B": b - 1})
+    if a >= 5:
+        return (subtotal + 200, {**basket, "A": a - 5})
     if a >= 3:
         return (subtotal + 130, {**basket, "A": a - 3})
     if b >= 2:
         return (subtotal + 45, {**basket, "B": b - 2})
-    if a > 0:
+    if a >= 1:
         return (subtotal + 50, {**basket, "A": a - 1})
-    if b > 0:
+    if b >= 1:
         return (subtotal + 30, {**basket, "B": b - 1})
-    if c > 0:
+    if c >= 1:
         return (subtotal + 20, {**basket, "C": c - 1})
-    if d > 0:
+    if d >= 1:
         return (subtotal + 15, {**basket, "D": d - 1})
-    if e > 0:
+    if e >= 1:
         return (subtotal + 40, {**basket, "E": e - 1})
 
 
@@ -52,4 +54,5 @@ def price_step(subtotal, basket):
         return subtotal, None
     else:
         return -1, None
+
 
