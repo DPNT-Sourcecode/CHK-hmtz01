@@ -27,7 +27,10 @@ def test_checkout_counter(input_skus, counter_output):
 )
 def test_price_step(input_basket, price):
      new_price, new_basket = checkout_solution.price_step(1000, input_basket)
+     # Check price has incremented correctly
      assert new_price == 1000 + price
+     # Check that basket is empty
      assert sum(new_basket.values()) == 0
+
 
 

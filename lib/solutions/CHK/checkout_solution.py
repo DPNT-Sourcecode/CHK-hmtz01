@@ -34,4 +34,10 @@ def price_step(subtotal, basket):
     if d > 0:
         return (subtotal + 15, {**basket, "D": d - 1})
 
+    if all(v == 0 for v in basket.values()):
+        return subtotal, None
+    else:
+        return -1, None
+
+
 
