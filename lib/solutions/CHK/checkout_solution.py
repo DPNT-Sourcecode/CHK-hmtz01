@@ -66,7 +66,7 @@ def price_step(subtotal, basket):
     if h >= 5:
         return (subtotal + 45, {**basket, "H": h - 5})
     if k >= 2:
-        return (subtotal + 150, {**basket, "K": k - 2})
+        return (subtotal + 120, {**basket, "K": k - 2})
     if n >= 3 and m >= 1:
         return (subtotal + 120, {**basket, "N": n - 3, "M": m - 1})
     if p >= 5:
@@ -84,9 +84,9 @@ def price_step(subtotal, basket):
     if s + t + x + y + z >= 3:
         new_z = max(0, z - 3)
         new_y = max(0, y - (3 + new_z - z))
-        new_s = max(0, y - (3 + new_z + new_y - z - y))
-        new_t = max(0, y - (3 + new_z + new_y + new_s - z - y - s))
-        new_x = max(0, y - (3 + new_z + new_y + new_s + new_t - z - y - s - t))
+        new_s = max(0, s - (3 + new_z + new_y - z - y))
+        new_t = max(0, t - (3 + new_z + new_y + new_s - z - y - s))
+        new_x = max(0, x - (3 + new_z + new_y + new_s + new_t - z - y - s - t))
         return (subtotal + 45, {**basket, "Z": new_z, "Y": new_y, "S": new_s, "T": new_t, "X": new_x})
     if a >= 1:
         return (subtotal + 50, {**basket, "A": a - 1})
@@ -146,5 +146,6 @@ def price_step(subtotal, basket):
         return subtotal, None
     else:
         return -1, None
+
 
 

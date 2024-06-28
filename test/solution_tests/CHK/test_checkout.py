@@ -68,6 +68,8 @@ def test_basket_from_skus(input_skus, counter_output):
         ({"X": 3}, 45),
         ({"Y": 3}, 45),
         ({"Z": 3}, 45),
+        ({"S": 1, "T": 2}, 45),
+        ({"X": 1, "Y": 1, "Z": 1}, 45),
         ({"S": 1}, 20),
         ({"T": 1}, 20),
         ({"U": 4}, 120),
@@ -87,4 +89,5 @@ def test_price_step(input_basket, price):
      assert new_price == 1000 + price
      # Check that basket is empty
      assert sum(new_basket.values()) == 0
+
 
